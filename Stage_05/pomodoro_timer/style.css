@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --base-color: 275;
+    --bg-card: hsla(var(--base-color), 97%, 31%, 1);
+    --bg-darkcard: hsla(var(--base-color), 74%, 15%, 1)
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+
+    padding: 10rem;
+}
+
+.theme-control {
+    position: absolute;
+    
+    top: 6rem;
+    right: 6rem;
+}
+
+button {
+    border: none;
+    background: none;
+
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock {
+    margin-right: 19.2rem;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(4rem, 4rem + 10vw, 12.6rem);
+    font-weight: medium;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sounds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+}
+
+.sounds button {
+    width: 13.8rem;
+    height: 15.2rem;
+}
+
+.forest,
+.rain,
+.coffee,
+.fire {
+    background-color: #E1E1E6;
+    border-radius: 2.4rem;
+
+    width: 13.8rem;
+    height: 15.2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sounds svg path {
+    fill: #323238;
+}
+
+.sounds .selected {
+    background-color: var(--bg-card);
+}
+
+.sounds .selected svg path {
+    fill: #FFFFFF;
+}
+
+input[type='range'] {
+    cursor: pointer;
+
+    border: none;
+
+    width: 9rem;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    background: #323238;
+    height: 0.4rem;
+    border-radius: 0.5rem;
+}
+
+.selected [type='range']::-webkit-slider-runnable-track,
+.dark [type='range']::-webkit-slider-runnable-track {
+    background: #FFFFFF;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    margin-top: -6px; /* Centers thumb on the track */
+
+    height: 1.6rem;
+    width: 1.6rem;    
+}
+
+.volume-slider {
+    margin-bottom: 2.4rem;
+}
+
+.hide {
+    display: none;
+}
+
+.dark {
+    background-color: #121214;
+
+    color: white;
+}
+
+.controls .dark svg path {
+    fill: #C4C4CC;
+}
+
+.sounds .dark {
+    background-color: #29292E;
+}
+
+.sounds .dark svg path {
+    fill: #C4C4CC;
+}
+
+.dark .selected {
+    background-color: var(--bg-darkcard);
+}
